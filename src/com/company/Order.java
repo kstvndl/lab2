@@ -17,6 +17,7 @@ public class Order {
         this.dishes = dishes;
     }
 
+    // TODO: если элементов больше чем DEFAULT_SIZE возникнет ошибка
     public boolean add(Dish dish) {
         dishes[size] = dish;
         size++;
@@ -25,7 +26,7 @@ public class Order {
 
     public boolean remove(String dishName) {
         for (int i = 0; i < size; i++) {
-            if (dishes[i].getName().equals(dishName)){
+            if (dishes[i].getName().equals(dishName)) {
                 dishes[i] = null;
                 for (int j = i+1; j < size; j++) {
                     dishes[j-1] = dishes[j];
@@ -88,6 +89,7 @@ public class Order {
         int count = 0;
         for (int i = 0; i < size; i++) {
             isFinded = false;
+            //TODO: Не использовать continue
             for (String name:names) {
                 if (name == null) continue;
                 if (name.equals(dishes[i].getName())) {
@@ -111,8 +113,7 @@ public class Order {
         Dish temp;
         for(int i = 0; i < numbers.length; i++) {
             for(int j = 1; j < (numbers.length-i); j++) {
-                if(numbers[j-1].getCost() < numbers[j].getCost())
-                {
+                if(numbers[j-1].getCost() < numbers[j].getCost()) {
                     temp = numbers[j-1];
                     numbers[j-1] = numbers[j];
                     numbers[j] = temp;

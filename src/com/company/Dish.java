@@ -5,9 +5,11 @@ public class Dish {
     private String name;
     private String description;
 
+    // TODO: меньший конструктор должен вызывать больший конструктор
     public Dish(String name, String description) {
         this.name = name;
         this.description = description;
+        // TODO: вынести cost в константу
         this.cost = 0;
     }
 
@@ -17,6 +19,7 @@ public class Dish {
         this.cost = cost;
     }
 
+    // TODO: вынести выше
     public Dish() {
     }
 

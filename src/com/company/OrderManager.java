@@ -24,6 +24,7 @@ public class OrderManager {
     }
 
 
+    // TODO: Можно обойтись без free
     public int freeTableNumber() {
         int free = -1;
         for (int i = 0; i < this.orders.length; i++) {
@@ -35,6 +36,7 @@ public class OrderManager {
         return free;
     }
 
+    // TODO: Использовать Predicate
     public int[] freeTableNumbers() {
         int count = 0;
         int[] all = new int[this.orders.length];
@@ -71,6 +73,7 @@ public class OrderManager {
         return orders;
     }
 
+    // TODO: Не использовать continue
     public double ordersCostSummary() {
         double totalCost = 0;
         for (int i = 0; i < this.orders.length; i++) {
@@ -82,14 +85,15 @@ public class OrderManager {
         return totalCost;
     }
 
+    //TODO: Не использовать continue
     public int dishQuantity(String dishName) {
         int quantity = 0;
         for (int i = 0; i < this.orders.length; i++) {
             if (this.orders[i] == null) continue;
             for (int j = 0; j < getOrder(i).dishQuantity(); j++) {
-                    if (this.orders[i].getDishes()[j].getName().equals(dishName)) {
-                        quantity++;
-                    }
+                if (this.orders[i].getDishes()[j].getName().equals(dishName)) {
+                    quantity++;
+                }
             }
         }
         return quantity;
